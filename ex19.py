@@ -22,3 +22,27 @@ cheese_and_crackers(10 + 20, 5 + 6)
 
 print("And we can combine the two, variables and math:")
 cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
+
+
+# My creations are below
+def avo_toast(plus, bread):
+    print(f"I eat avocado toast with avocado and {plus} on {bread} bread.")
+
+
+avo_toast("onions", "sourdough")
+
+
+plus = "saurkraut"
+bread = "ciabatta"
+avo_toast(plus, bread)
+
+
+def new_sandwich(filler, bread):
+    print("I love sandwiches!")
+    print(f"I like to add {filler} and smash it between "
+          "two loaves of {bread} bread.")
+    print("I like how " + filler + " tastes.")
+    print(f"I could probably eat {bread} everyday")
+
+
+new_sandwich(str(15) + " anchovies", str("dry") + " rye")

@@ -64,6 +64,32 @@ print("Months are: " + months)
 # numbers on the command line. Use int() to convert them just like with
 # int(input()).
 
+# ex16
+print("Opening the file...")
+target = open(filename, 'w')
+
+print("Truncating the file...")
+target.truncate()
+
+print("Write 'blabber' in the file")
+target.write("blabber")
+
+print("Close the file...")
+target.close()
+
+# ex17
+from sys import argv
+from os.path import exists
+
+# 'script' refers to the python file
+script, from_file, to_file = argv
+
+print(f"Copying from {from_file} to {to_file}")
+
+# 'exists' tells if a file exists with true or false
+print(f"Does the output file exist? {exists(to_file)}")
+
+
 # ex18
 # this one is like your scripts with argv
 def print_two(*args):
@@ -108,7 +134,35 @@ print_none()
 # 4. Did you end the function call with a ) character?
 
 # ex19
+# Is there a limit to the number of arguments a function can have? It depends
+# on the version of Python and the computer you’re on, but it is fairly large.
+# The practical limit though is about five arguments before the function
+# becomes annoying to use.
 
+# ex20
+#
+# Q: "What is the purpose of the -m switch?"
+# A: "The first line of the Rationale section of PEP 338 says:
+# >>Python 2.4 adds the command line switch -m to allow modules to be located
+# >>using the Python module namespace for execution as scripts. The motivating
+# >>examples were standard library modules such as pdb and profile, and the
+# >>Python 2.4 implementation is fine for this limited purpose.
+#
+# So you can specify any module in Python's search path this way, not just
+# files in the current directory. You're correct that python mymod1.py
+# mymod2.py args has exactly the same effect. The first line of the Scope of
+# this proposal section states:
+# >>In Python 2.4, a module located using -m is executed just as if its
+# >>filename had been provided on the command line.
+# With -m more is possible, like working with modules which are part of a
+# package, etc. That's what the rest of PEP 338 is about. Read it for more
+# info." SOURCE: https://stackoverflow.com/questions/7610001/what-is-the-purpose-of-the-m-switch
+#
+# Q: What does "+=" do?
+# A: "+=" adds whatever is on the right to whatever is on the left.
+#    Ex. If you have "a = 10" then "a += 5" would be:  "a = a + 5"
+#    So, "a" now equal to 15.
+#    SOURCE: https://stackoverflow.com/questions/4841436/what-exactly-does-do-in-python
 
 
 # Appendix A
