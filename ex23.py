@@ -5,9 +5,9 @@ script, input_encoding, error = sys.argv  # input_encoding = utf-8 ; error = str
 def main(language_file, encoding, errors):  # language_file references "languages" which references the languages.txt file ; encoding references "input_encoding" (which was provided in line23 in main fnct) and was provided when the script was called ; "errors" references "error" (see when main fnct is called at line23)
     line = language_file.readline()
 
-    if line:
+    if line:  # Once there is no line, this loop will stop
         print_line(line, encoding, errors)
-        return main(language_file, encoding, errors)
+        return main(language_file, encoding, errors)  # returns to the top of this fnct
 
 
 def print_line(line, encoding, errors):
@@ -21,3 +21,6 @@ def print_line(line, encoding, errors):
 languages = open("languages.txt", encoding="utf-8")  # opens txt file and assigns it to this variable
 
 main(languages, input_encoding, error)  # languages is "languages.txt" ; input_encoding is provided when calling the script ; error is provided when calling the script
+
+
+# DBES --> "Decode Bytes Encode Strings"
